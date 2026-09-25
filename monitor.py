@@ -15,6 +15,8 @@ SITEMAP_URL = os.environ.get("SITEMAP_URL", "https://www.holland2stay.com/sitema
 URL_PATTERN = os.environ.get("URL_PATTERN", "/residences/")  # which sitemap URLs are homes
 BATCH = int(os.environ.get("BATCH", "25"))                    # pages opened per check
 ALERT_LOTTERY = os.environ.get("ALERT_LOTTERY", "1") == "1"
+# 0 = never open listing pages (for GitHub, where they're blocked): only alert on new listings
+DETAIL_CHECKS = os.environ.get("DETAIL_CHECKS", "1") == "1"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "seen.json")
@@ -75,6 +77,7 @@ def load_state():
     s.setdefault("seeding", True)
     s.setdefault("error_reported", False)
     s.setdefault("unknown_warned", False)
+    s.setdefault("hello_sent", False)
     return s
 
 
@@ -84,12 +87,14 @@ def save_state(s):
 
 
 def telegram(text):
+    """Send a message; returns True if it actually went out."""
     if not TOKEN or not CHAT_ID:
         print("[no Telegram credentials] " + text)
-        return
+        return False
     data = urllib.parse.urlencode({"chat_id": CHAT_ID, "text": text}).encode()
     urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data, timeout=30)
     time.sleep(1)
+    return True
 
 
 def pretty_name(url):
@@ -100,9 +105,9 @@ def pretty_name(url):
 def report_error(s, msg):
     print("Check failed:", msg)
     if not s["error_reported"]:
-        telegram(f"⚠️ Holland2Stay monitor can't read the site right now ({msg}). "
-                 "I'll keep trying and won't repeat this warning.")
-        s["error_reported"] = True
+        s["error_reported"] = telegram(
+            f"⚠️ Holland2Stay monitor can't read the site right now ({msg}). "
+            "I'll keep trying and won't repeat this warning.")
 
 
 def check_once():
@@ -119,9 +124,23 @@ def check_once():
     for u in list(homes):
         if u not in current:
             del homes[u]  # page removed from the site
-    if first_run:
-        telegram(f"👋 Monitor is live. Found {len(current)} listings. I'm reading them "
-                 "quietly first; after that you'll hear about every home that becomes bookable.")
+    if not s["hello_sent"]:
+        what = ("every home that becomes bookable" if DETAIL_CHECKS
+                else "every new listing (status not checked in this mode)")
+        s["hello_sent"] = telegram(f"👋 Monitor is live. Tracking {len(current)} listings; "
+                                   f"you'll hear about {what}.")
+        s["error_reported"] = False  # any earlier warning was never delivered
+
+    if not DETAIL_CHECKS:
+        alerts = 0
+        for u in [u for u in homes if homes[u] == "new"]:
+            if not first_run:
+                telegram(f"🆕 New Holland2Stay listing (status not checked): {pretty_name(u)}\n{u}")
+                alerts += 1
+            homes[u] = "unchecked"
+        print(f"{len(homes)} listings, {alerts} new (new-listings-only mode)")
+        save_state(s)
+        return
 
     # Brand-new pages first, then continue the rotation through everything else.
     new = [u for u in homes if homes[u] == "new"]
@@ -134,11 +153,19 @@ def check_once():
         s["seeding"] = False  # a full pass is done; alerts switch on
 
     alerts = 0
+    checked_now = 0
     for url in batch:
         try:
             status = read_status(url)
+            checked_now += 1
         except Exception as e:
-            report_error(s, e); break
+            report_error(s, e)
+            # Can't open pages: still tell you about brand-new listings.
+            for u in [u for u in homes if homes[u] == "new"]:
+                telegram(f"🆕 New Holland2Stay listing (couldn't check status): {pretty_name(u)}\n{u}")
+                homes[u] = "unknown"
+                alerts += 1
+            break
         before = homes[url]
         homes[url] = status
         quiet = before == "unchecked"  # first reading of a home already listed at start
@@ -164,7 +191,7 @@ def check_once():
                  "have changed; run the --test command from the README on one listing.")
         s["unknown_warned"] = True
 
-    print(f"{len(homes)} listings, checked {len(batch)}, {alerts} alerts, "
+    print(f"{len(homes)} listings, checked {checked_now}, {alerts} alerts, "
           f"{'seeding' if s['seeding'] else 'live'}")
     save_state(s)
 
