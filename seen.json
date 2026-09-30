@@ -4,6 +4,7 @@
 "hello_sent": true,
 "homes": {
 "https://www.holland2stay.com/residences/admiraliteitskade-40-822.html": "unchecked",
+"https://www.holland2stay.com/residences/azieweg-318.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a102.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a113.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a73.html": "unchecked",
@@ -13,6 +14,7 @@
 "https://www.holland2stay.com/residences/boschdijk-11-h.html": "unchecked",
 "https://www.holland2stay.com/residences/boschdijk-21-g.html": "unchecked",
 "https://www.holland2stay.com/residences/boschdijk-525-0303-room-24.html": "unchecked",
+"https://www.holland2stay.com/residences/brusselstraat-1-a-7.html": "unchecked",
 "https://www.holland2stay.com/residences/busschuttenpoort-4-b-04.html": "unchecked",
 "https://www.holland2stay.com/residences/busschuttenpoort-4-e-04.html": "unchecked",
 "https://www.holland2stay.com/residences/de-fallastraat-1.html": "unchecked",
@@ -47,6 +49,7 @@
 "https://www.holland2stay.com/residences/g-h-betzweg-369.html": "unchecked",
 "https://www.holland2stay.com/residences/g-h-betzweg-401.html": "unchecked",
 "https://www.holland2stay.com/residences/g-h-betzweg-439.html": "unchecked",
+"https://www.holland2stay.com/residences/galvanistraat-255.html": "unchecked",
 "https://www.holland2stay.com/residences/groningersingel-51-13.html": "unchecked",
 "https://www.holland2stay.com/residences/groningersingel-51-167.html": "unchecked",
 "https://www.holland2stay.com/residences/groningersingel-51-46.html": "unchecked",
@@ -97,6 +100,7 @@
 "https://www.holland2stay.com/residences/vleutenseweg-420-8.html": "unchecked",
 "https://www.holland2stay.com/residences/wattbaan-31-17.html": "unchecked",
 "https://www.holland2stay.com/residences/wattbaan-31-56.html": "unchecked",
+"https://www.holland2stay.com/residences/westblaak-738-room-5.html": "unchecked",
 "https://www.holland2stay.com/residences/weverstede-723.html": "unchecked"
 },
 "seeding": true,
