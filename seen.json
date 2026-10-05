@@ -18,7 +18,6 @@
 "https://www.holland2stay.com/residences/busschuttenpoort-6-e-02.html": "unchecked",
 "https://www.holland2stay.com/residences/de-fallastraat-1.html": "unchecked",
 "https://www.holland2stay.com/residences/engelandlaan-266-d.html": "unchecked",
-"https://www.holland2stay.com/residences/engelandlaan-266-e.html": "unchecked",
 "https://www.holland2stay.com/residences/engelandlaan-266-f.html": "unchecked",
 "https://www.holland2stay.com/residences/engelandlaan-268-g.html": "unchecked",
 "https://www.holland2stay.com/residences/engelandlaan-270-d.html": "unchecked",
@@ -62,6 +61,7 @@
 "https://www.holland2stay.com/residences/g-h-betzweg-365.html": "unchecked",
 "https://www.holland2stay.com/residences/g-h-betzweg-371.html": "unchecked",
 "https://www.holland2stay.com/residences/g-h-betzweg-439.html": "unchecked",
+"https://www.holland2stay.com/residences/j-c-van-markenlaan-5-f207.html": "unchecked",
 "https://www.holland2stay.com/residences/j-c-van-markenlaan-5-f311.html": "unchecked",
 "https://www.holland2stay.com/residences/j-c-van-markenlaan-5-f404.html": "unchecked",
 "https://www.holland2stay.com/residences/j-c-van-markenlaan-5-f607.html": "unchecked",
@@ -84,8 +84,7 @@
 "https://www.holland2stay.com/residences/victoriapark-881.html": "unchecked",
 "https://www.holland2stay.com/residences/vleutenseweg-420-3.html": "unchecked",
 "https://www.holland2stay.com/residences/vleutenseweg-420-7.html": "unchecked",
-"https://www.holland2stay.com/residences/vleutenseweg-420-8.html": "unchecked",
-"https://www.holland2stay.com/residences/westblaak-930.html": "unchecked"
+"https://www.holland2stay.com/residences/vleutenseweg-420-8.html": "unchecked"
 },
 "seeding": true,
 "unknown_warned": false
