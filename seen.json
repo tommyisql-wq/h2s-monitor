@@ -5,7 +5,6 @@
 "homes": {
 "https://www.holland2stay.com/residences/admiraliteitskade-40-1111.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a109.html": "unchecked",
-"https://www.holland2stay.com/residences/berg-en-dalseweg-79a113.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a21.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a29.html": "unchecked",
 "https://www.holland2stay.com/residences/berg-en-dalseweg-79a3.html": "unchecked",
@@ -93,7 +92,6 @@
 "https://www.holland2stay.com/residences/hofwijckstraat-209.html": "unchecked",
 "https://www.holland2stay.com/residences/hofwijckstraat-211.html": "unchecked",
 "https://www.holland2stay.com/residences/hofwijckstraat-213.html": "unchecked",
-"https://www.holland2stay.com/residences/hofwijckstraat-83.html": "unchecked",
 "https://www.holland2stay.com/residences/hofwijckstraat-85.html": "unchecked",
 "https://www.holland2stay.com/residences/hofwijckstraat-91.html": "unchecked",
 "https://www.holland2stay.com/residences/hofwijckstraat-93.html": "unchecked",
@@ -106,7 +104,6 @@
 "https://www.holland2stay.com/residences/jan-van-zutphenstraat-363.html": "unchecked",
 "https://www.holland2stay.com/residences/jan-van-zutphenstraat-779.html": "unchecked",
 "https://www.holland2stay.com/residences/jan-van-zutphenstraat-787.html": "unchecked",
-"https://www.holland2stay.com/residences/kastanjelaan-1-135.html": "unchecked",
 "https://www.holland2stay.com/residences/kastanjelaan-1-46.html": "unchecked",
 "https://www.holland2stay.com/residences/kastanjelaan-1-529.html": "unchecked",
 "https://www.holland2stay.com/residences/kastanjelaan-1-635.html": "unchecked",
@@ -161,7 +158,6 @@
 "https://www.holland2stay.com/residences/stadsring-161m.html": "unchecked",
 "https://www.holland2stay.com/residences/stadsring-161v.html": "unchecked",
 "https://www.holland2stay.com/residences/stadsring-163g.html": "unchecked",
-"https://www.holland2stay.com/residences/stadsring-163n.html": "unchecked",
 "https://www.holland2stay.com/residences/van-grobbendoncklaan-137.html": "unchecked",
 "https://www.holland2stay.com/residences/victoriapark-315.html": "unchecked",
 "https://www.holland2stay.com/residences/victoriapark-472.html": "unchecked",
@@ -173,9 +169,7 @@
 "https://www.holland2stay.com/residences/vleutenseweg-420-7.html": "unchecked",
 "https://www.holland2stay.com/residences/vleutenseweg-420-8.html": "unchecked",
 "https://www.holland2stay.com/residences/vliegend-hertlaan-1-150.html": "unchecked",
-"https://www.holland2stay.com/residences/waterstraat-11-47.html": "unchecked",
-"https://www.holland2stay.com/residences/wattbaan-31-10.html": "unchecked",
-"https://www.holland2stay.com/residences/westblaak-614.html": "unchecked"
+"https://www.holland2stay.com/residences/waterstraat-11-47.html": "unchecked"
 },
 "seeding": true,
 "unknown_warned": false
